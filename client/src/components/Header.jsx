@@ -1,12 +1,13 @@
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import propspaceLogo from '../assets/propspaceLogo.png';
 
 const Header = () => {
   return (
     <header className=" bg-slate-200 shadow-md">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
-          <h1 className=" font-bold text-sm sm:text-xl">PropSpace</h1>
+          <img src={propspaceLogo} alt="PropSpace" className="h-12" />
         </Link>
         <form className="bg-slate-100 p-3 rounded-lg flex items-center ">
           <input
