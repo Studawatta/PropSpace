@@ -1,9 +1,9 @@
 import express, { Router } from 'express';
-import { createListning } from '../controllers/listning.controller.js';
+import { createListing } from '../controllers/listing.controller.js';
 import { verifyToken } from '../utils/verifyUser.js';
 
 const router = express.Router();
 
-router.post('/create', verifyToken, createListning);
+router.get('/create', createListing);
 
 export default Router;
