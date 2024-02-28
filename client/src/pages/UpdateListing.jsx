@@ -48,9 +48,9 @@ const UpdateListing = () => {
     };
 
     fetchListing();
-  }, []);
+  }, [params.listingId]);
 
-  const handleImageSubmit = (e) => {
+  const handleImageSubmit = () => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);
@@ -68,6 +68,7 @@ const UpdateListing = () => {
           setImageUploadError(false);
           setUploading(false);
         })
+        // eslint-disable-next-line no-unused-vars
         .catch((error) => {
           setImageUploadError('Image upload failed (2mb max per image)');
           setUploading(false);
@@ -159,7 +160,7 @@ const UpdateListing = () => {
       });
       const data = await res.json();
       setLoading(false);
-      if ((data.success = false)) {
+      if (data.success === false) {
         setError(data.message);
       }
       navigate(`/listing/${data._id}`);

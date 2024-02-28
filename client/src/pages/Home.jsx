@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
@@ -12,10 +12,6 @@ const Home = () => {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   const [rentListigs, setRentListings] = useState([]);
-
-  console.log('off', offerListings);
-  console.log(saleListings);
-  console.log(rentListigs);
 
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -70,7 +66,7 @@ const Home = () => {
           to={'/search'}
           className="text-xs sm:text-sm text-blue-800 font-bold hover:underline"
         >
-          Let's get started...
+          {` Let's get started...`}
         </Link>
       </div>
 

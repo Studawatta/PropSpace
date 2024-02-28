@@ -34,7 +34,7 @@ const CreateListing = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleImageSubmit = (e) => {
+  const handleImageSubmit = () => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);
@@ -52,6 +52,7 @@ const CreateListing = () => {
           setImageUploadError(false);
           setUploading(false);
         })
+        // eslint-disable-next-line no-unused-vars
         .catch((error) => {
           setImageUploadError('Image upload failed (2mb max per image)');
           setUploading(false);
@@ -143,7 +144,7 @@ const CreateListing = () => {
       });
       const data = await res.json();
       setLoading(false);
-      if ((data.success = false)) {
+      if (data.success === false) {
         setError(data.message);
       }
       navigate(`/listing/${data._id}`);
