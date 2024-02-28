@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
 
@@ -64,7 +64,7 @@ const Search = () => {
       setLoading(false);
     };
     fetchListings();
-  }, [location.search]);
+  }, []);
 
   const handleChange = (e) => {
     if (
